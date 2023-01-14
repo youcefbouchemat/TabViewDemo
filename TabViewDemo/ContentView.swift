@@ -9,13 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView{
+            Text("First screen content")
+                .tabItem{
+                    Image(systemName: "1.circle")
+                    Text("Screen One")
+                }
+            Text("Second screen content")
+                .tabItem{
+                    Image(systemName: "2.circle")
+                    Text("Screen Two")
+                }
+            Text("Thered screen content")
+                .tabItem{
+                    Image(systemName: "3.circle")
+                    Text("Screen Three")
+                }
         }
-        .padding()
+        .font(.largeTitle)
     }
 }
 
