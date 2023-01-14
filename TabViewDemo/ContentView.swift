@@ -8,25 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selection: Int = 2;
     var body: some View {
-        TabView{
-            Text("First screen content")
+        TabView(selection: $selection){
+            Text("First screen content \(selection)")
                 .tabItem{
                     Image(systemName: "1.circle")
                     Text("Screen One")
-                }
-            Text("Second screen content")
+                }.tag(1)
+            Text("Second screen content \(selection)")
                 .tabItem{
                     Image(systemName: "2.circle")
                     Text("Screen Two")
-                }
-            Text("Thered screen content")
+                }.tag(2)
+            Text("Thered screen content \(selection)")
                 .tabItem{
                     Image(systemName: "3.circle")
                     Text("Screen Three")
-                }
+                }.tag(3)
         }
         .font(.largeTitle)
+        //.tabViewStyle(PageTabViewStyle()) //removed to make tab bar visible
     }
 }
 
